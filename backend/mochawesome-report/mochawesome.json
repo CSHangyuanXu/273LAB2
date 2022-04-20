@@ -1,0 +1,256 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-11T14:36:17.791Z",
+    "end": "2022-04-11T14:36:31.815Z",
+    "duration": 14024,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2bb45e96-7729-4272-88e8-c71bdcb7e5d9",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f15b6a2e-f93d-40fa-aa72-327fc9f231ce",
+          "title": "/GET all product route",
+          "fullFile": "F:\\node\\etsy-backend\\test\\AllProductRouteTest.js",
+          "file": "\\test\\AllProductRouteTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "it should GET all product route",
+              "fullTitle": "/GET all product route it should GET all product route",
+              "timedOut": false,
+              "duration": 13940,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai\n  .request(server)\n  .get(\"/product/all\")\n  .end((err, res) => {\n    res.should.have.status(200);\n    res.body.should.be.a(\"object\");\n    res.body.should.have.property(\"isSuccess\").eql(true);\n    const products = res.body.products;\n    products.should.be.a(\"array\");\n    done();\n  });",
+              "err": {},
+              "uuid": "629e98c3-05b0-4394-a264-2825c5da52af",
+              "parentUUID": "f15b6a2e-f93d-40fa-aa72-327fc9f231ce",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "629e98c3-05b0-4394-a264-2825c5da52af"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13940,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        },
+        {
+          "uuid": "c9ebd464-a66d-4804-89c7-f1b319377824",
+          "title": "/POST shop/create",
+          "fullFile": "F:\\node\\etsy-backend\\test\\CreateShopTest.js",
+          "file": "\\test\\CreateShopTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "it should POST create shop",
+              "fullTitle": "/POST shop/create it should POST create shop",
+              "timedOut": false,
+              "duration": 25,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const createShop = {\n  name: \"\",\n};\nchai\n  .request(server)\n  .post(\"/shop/create\")\n  .send(createShop)\n  .end((err, res) => {\n    res.should.have.status(200);\n    res.body.should.be.a(\"object\");\n    res.body.should.have.property(\"isNotLoggedIn\").eql(true);\n    done();\n  });",
+              "err": {},
+              "uuid": "191c5917-ba7b-4df5-b3c7-6991423df847",
+              "parentUUID": "c9ebd464-a66d-4804-89c7-f1b319377824",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "191c5917-ba7b-4df5-b3c7-6991423df847"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        },
+        {
+          "uuid": "c17df628-09b6-437a-a67b-4822952f1283",
+          "title": "/GET auth/user",
+          "fullFile": "F:\\node\\etsy-backend\\test\\GetUserTest.js",
+          "file": "\\test\\GetUserTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "it should GET user",
+              "fullTitle": "/GET auth/user it should GET user",
+              "timedOut": false,
+              "duration": 10,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai\n  .request(server)\n  .get(\"/auth/user\")\n  .end((err, res) => {\n    res.should.have.status(200);\n    res.body.should.be.a(\"object\");\n    res.body.should.have.property(\"isLogin\").eql(false);\n    done();\n  });",
+              "err": {},
+              "uuid": "617a0b60-116e-40d6-809d-a7058077c832",
+              "parentUUID": "c17df628-09b6-437a-a67b-4822952f1283",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "617a0b60-116e-40d6-809d-a7058077c832"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        },
+        {
+          "uuid": "e1d1404a-1ca5-4e47-927d-5ff53489be6d",
+          "title": "/POST auth/login",
+          "fullFile": "F:\\node\\etsy-backend\\test\\LoginTest.js",
+          "file": "\\test\\LoginTest.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "it should POST login",
+              "fullTitle": "/POST auth/login it should POST login",
+              "timedOut": false,
+              "duration": 10,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const login = {\n  email: \"\",\n  password: \"\",\n};\nchai\n  .request(server)\n  .post(\"/auth/login\")\n  .send(login)\n  .end((err, res) => {\n    res.should.have.status(200);\n    res.body.should.be.a(\"object\");\n    res.body.should.have.property(\"isSuccess\").eql(false);\n    res.body.should.have\n      .property(\"message\")\n      .eql(\"Incorrect email or password\");\n    done();\n  });",
+              "err": {},
+              "uuid": "ec322092-f943-4960-a525-62c4fa16474c",
+              "parentUUID": "e1d1404a-1ca5-4e47-927d-5ff53489be6d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ec322092-f943-4960-a525-62c4fa16474c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        },
+        {
+          "uuid": "da9f2751-de9c-4442-bf59-711b764acba3",
+          "title": "/POST auth/register",
+          "fullFile": "F:\\node\\etsy-backend\\test\\RegisterRoute.js",
+          "file": "\\test\\RegisterRoute.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "it should POST register",
+              "fullTitle": "/POST auth/register it should POST register",
+              "timedOut": false,
+              "duration": 10,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const register = {\n  fullName: \"\",\n  email: \"\",\n  password: \"\",\n};\nchai\n  .request(server)\n  .post(\"/auth/register\")\n  .send(register)\n  .end((err, res) => {\n    res.should.have.status(200);\n    res.body.should.be.a(\"object\");\n    res.body.should.have.property(\"isSuccess\").eql(false);\n    res.body.should.have\n      .property(\"message\")\n      .eql(\"Please fill in all fields\");\n    done();\n  });",
+              "err": {},
+              "uuid": "a9bb7678-317e-481d-8f0a-44c8684ef47b",
+              "parentUUID": "da9f2751-de9c-4442-bf59-711b764acba3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a9bb7678-317e-481d-8f0a-44c8684ef47b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 70000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 70000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
