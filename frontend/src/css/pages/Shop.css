@@ -1,0 +1,20 @@
+#shop {
+  padding: 20px;
+}
+#shop .shop-info {
+  display: flex;
+}
+
+#shop .shop-info img {
+  width: 120px;
+  border-radius: 5px;
+  margin-right: 2rem;
+}
+#shop .shop-info button {
+  margin-top: 10px;
+}
+#shop h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}

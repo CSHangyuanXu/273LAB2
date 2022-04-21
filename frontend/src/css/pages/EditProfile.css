@@ -1,0 +1,28 @@
+#editProfile {
+  padding: 20px;
+}
+
+#editProfile .avatar-continer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+#editProfile .avatar-continer img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+#editProfile .avatar-continer div {
+  display: flex;
+  margin-left: 1.5rem;
+  flex-direction: column;
+}
+#editProfile .avatar-continer div input {
+  margin-bottom: 1.5rem;
+}
+
+#editProfile h1 {
+  color: rgba(0, 0, 0, 0.6);
+}

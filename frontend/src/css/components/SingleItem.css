@@ -1,0 +1,33 @@
+.singleItem .MuiPaper-root {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.singleItem .MuiPaper-root .heart {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: white;
+  padding: 5px;
+
+  place-items: center;
+  border: none;
+  color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+}
+.singleItem .MuiPaper-root #edit-btn {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+}
+.singleItem .MuiPaper-root:hover .heart {
+  display: grid;
+}
+
+.singleItem .MuiPaper-root:hover #edit-btn {
+  display: block;
+}

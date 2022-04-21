@@ -1,0 +1,17 @@
+.items-flex {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+
+.link {
+  text-decoration: none;
+  color: #ffffff;
+
+  font-size: 1.1rem;
+}
+
+a{
+  text-decoration: none;
+
+}

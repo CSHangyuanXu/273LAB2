@@ -1,0 +1,74 @@
+#itemDetils {
+  padding: 20px;
+  display: flex;
+
+  justify-content: center;
+}
+#itemDetils .left,
+#itemDetils .right {
+  width: 50%;
+  max-width: 600px;
+}
+#itemDetils .left {
+  padding-right: 1rem;
+}
+#itemDetils .left img {
+  width: 100%;
+ 
+  border-radius: 10px;
+}
+#itemDetils .right {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 2rem;
+}
+#itemDetils .right h3 {
+  font-size: 1.5rem;
+}
+#itemDetils .right p {
+  margin-bottom: 1rem;
+}
+#itemDetils .right h1 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+#itemDetils .right button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 825px) {
+  #itemDetils {
+    flex-direction: column;
+    align-items: center;
+  }
+  #itemDetils .left,
+  #itemDetils .right {
+    width: 100%;
+  }
+  #itemDetils .left {
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 2rem;
+    justify-content: center;
+  }
+  #itemDetils .right {
+    padding-left: 0px;
+  }
+}
+
+#itemDetils .left .heart{
+  margin-left: 100%;
+  
+  background: white;
+  padding: 5px;
+  
+  place-items: center;
+  border: none;
+  color: black;
+  border-radius: 50%;
+  cursor: pointer;
+  
+}

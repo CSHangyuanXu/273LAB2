@@ -1,0 +1,35 @@
+#basketPage{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+#basketPage .left{
+    width: 70%;
+}
+#basketPage .right{
+    padding-right: 2rem;
+    width: 30%;
+
+}
+#basketPage .right .total-continer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width:900px){
+    #basketPage{
+        flex-direction: column;
+        
+    }
+    #basketPage .left{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    #basketPage .right{
+        padding-left: 2rem;
+        width: 100%;
+    }
+}
