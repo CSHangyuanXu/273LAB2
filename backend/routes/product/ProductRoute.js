@@ -167,7 +167,7 @@ router.get("/all", async (req, res) => {
       (product) => product.productId
     );
     const productsWithFavourite = [];
-    console.log(favouriteProductIds);
+
     products.map((product) => {
       if (favouriteProductIds.includes(product._id.toString())) {
         productsWithFavourite.push({

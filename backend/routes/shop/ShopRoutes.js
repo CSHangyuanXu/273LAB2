@@ -8,6 +8,22 @@ const uuid = require("uuid");
 const fs = require("fs");
 const isLogin = require("../../helper/IsLogin");
 
+// check shop name availability
+router.post("/checkShopName", async (req, res) => {
+  const { shopName } = req.body;
+
+  const shop = await ShopSchema.findOne({ name: shopName });
+  if (shop) {
+    res.json({
+      isAvailable: false,
+    });
+  } else {
+    res.json({
+      isAvailable: true,
+    });
+  }
+});
+
 // create a new shop with name, avatar data coming from the client as multipart/form-data
 router.post(
   "/create",
@@ -69,6 +85,7 @@ router.post(
                 res.json({
                   isSuccess: true,
                   message: "Shop created successfully",
+                  shopId: newShop._id,
                 });
               }
             });
@@ -118,6 +135,7 @@ router.get("/details", async (req, res) => {
       const allProductsInShop = await ProductSchema.find({
         shopId: shopId,
       });
+
       res.json({
         isSuccess: true,
         shop: shop,

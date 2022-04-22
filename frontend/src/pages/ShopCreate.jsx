@@ -16,6 +16,7 @@ import axios from "axios";
 import baseUrl from "../constants/baseUrl";
 import { toast } from "react-toastify";
 import InputLabel from "@mui/material/InputLabel";
+import Shop from "./Shop";
 
 function Copyright(props) {
   return (
@@ -38,6 +39,7 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function ShopCreate() {
+  const [shopName, setShopName] = React.useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -62,7 +64,7 @@ export default function ShopCreate() {
         const data = response.data;
         if (data.isSuccess) {
           toast.success("Shop created successfully");
-          window.location.href = "/";
+          window.location.href = "/shop/" + data.shopId;
         } else {
           toast.error(data.message);
         }
@@ -70,6 +72,36 @@ export default function ShopCreate() {
       .catch((error) => {
         toast.error(error.message);
       });
+  };
+
+  const checkShopName = () => {
+    if (shopName.length === 0) {
+      toast.error("Shop name can't be empty");
+    } else {
+      axios({
+        method: "post",
+        url: baseUrl + "/shop/checkShopName",
+        withCredentials: true,
+        data: {
+          shopName: shopName,
+        },
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          const data = response.data;
+          if (data.isAvailable) {
+            toast.success("Shop Name is available");
+            //window.location.href = "/";
+          } else {
+            toast.error("Shop Name is not available");
+          }
+        })
+        .catch((error) => {
+          toast.error(error.message);
+        });
+    }
   };
 
   return (
@@ -90,17 +122,30 @@ export default function ShopCreate() {
             noValidate
             sx={{ mt: 1 }}
           >
-            <TextField
-              margin="shopName"
-              required
-              fullWidth
-              id="shopName"
-              label="Enter Shop Name"
-              name="shopName"
-              type="text"
-              autoComplete="shopName"
-              autoFocus
-            />
+            <div style={{ display: "flex" }}>
+              <TextField
+                margin="shopName"
+                required
+                fullWidth
+                id="shopName"
+                label="Enter Shop Name"
+                name="shopName"
+                type="text"
+                autoComplete="shopName"
+                autoFocus
+                onChange={(event) => {
+                  setShopName(event.target.value);
+                }}
+              />
+              <Button
+                size="large"
+                variant="contained"
+                style={{ fontSize: "10px" }}
+                onClick={checkShopName}
+              >
+                Check Availability
+              </Button>
+            </div>
             <InputLabel style={{ marginTop: "1rem", marginBottom: "1rem" }}>
               Shop Avatar
             </InputLabel>
