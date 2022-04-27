@@ -1,1 +1,3 @@
 How to use this app?
+ type "cd backend" --> "npm install" --> "npm start"
+ In other terminal , type "cd frontend" -->"npm install" -->"npm start"
